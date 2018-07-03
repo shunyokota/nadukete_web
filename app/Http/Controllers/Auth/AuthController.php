@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    protected $redirectPath = '/home';
+    protected $redirectPath = '/';
     /**
      * ユーザーをTwitterの認証ページにリダイレクトする
      *
@@ -35,7 +35,12 @@ class AuthController extends Controller
         }
         $authUser = $this->findOrCreateUser($user);
         Auth::login($authUser, true);
-        return redirect()->route('home');
+        return redirect('/');
+    }
+
+    public function getLogout() {
+        Auth::logout();
+        return redirect('/');
     }
 
     private function findOrCreateUser($twitterUser){
