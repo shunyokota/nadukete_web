@@ -1,22 +1,19 @@
+window.onload = function() {
+    new Vue({
+        el: '#main-header',
+        data: function () {
+            return {registry_visible: false, registry_form: {}, registry_data: []}
+        },
 
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
-require('./bootstrap');
-
-window.Vue = require('vue');
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
-
-const app = new Vue({
-    el: '#app'
-});
+        methods: {
+            registry_submit: function () {
+                this.registry_data.push(this.registry_form);
+                this.registry_form = {};
+                this.registry_visible = false;
+            },
+            open_dialog: function () {
+                this.registry_visible = true;
+            }
+        }
+    });
+};
