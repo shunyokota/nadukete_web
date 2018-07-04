@@ -1,14 +1,120 @@
 
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import "node_modules/font-awesome/scss/font-awesome";
 
 // Variables
 @import "variables";
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+$theme-color: #FFCA9E;
+$key-color: #FFAF6C;
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  border-top: 3px solid #FFAF6C;
+  border-bottom: 5px solid #FFAF6C;
+  background-color: #ffffff;
+
+  .fa-bars:before {
+    color: $key-color;
+  }
+
+  [v-cloak] {
+    display: none;
+  }
+
+  #header-inner {
+    padding: 5px 10px;
+    position:relative;
+    height: 60px;
+
+    img#logo {
+      position:absolute;
+      height: 50px;
+      top: 10px;
+    }
+
+    h1#service-title {
+      position:absolute;
+      color: #333;
+      display: inline;
+      vertical-align: middle;
+      display: table-cell;
+      font-size: 28px;
+      font-weight: bold;
+      padding-left: 10px;
+      top: -5px;
+      left:70px;
+    }
+
+    a#hamburger {
+      position:absolute;
+      right: 20px;
+      top: 15px;
+    }
+
+  }
+
+  .main-menu-dialog {
+    background-color: $theme-color;
+    width: 80%;
+
+    .el-icon-close:before {
+      content: image-url('close_btn.svg');
+    }
+
+    .el-dialog__body {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    ul {
+      padding-left: 0;
+      list-style-type: none;
+
+      li a {
+        display:block;
+        color: white;
+        font-size: 1.4em;
+        padding: 0.4em 1em;
+        border-bottom: solid 1px;
+        text-decoration: none;
+      }
+    }
+  }
+
+  #hamburger {
+    position: relative;
+    height: 24px;
+    width: 24px;
+    display: inline-block;
+    box-sizing: border-box;
+  }
+
+  #hamburger div {
+    position: absolute;
+    left: 0;
+    height: 4px;
+    width: 24px;
+    background-color: #444;
+    border-radius: 2px;
+    display: inline-block;
+    box-sizing: border-box;
+  }
+
+  #hamburger div:nth-of-type(1) {
+    top: 0;
+  }
+
+  #hamburger div:nth-of-type(2) {
+    top: 10px;
+  }
+
+  #hamburger div:nth-of-type(3) {
+    bottom: 0;
+  }
 }
