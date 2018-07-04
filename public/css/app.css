@@ -3109,7 +3109,7 @@ header .main-menu-dialog {
 }
 
 header .main-menu-dialog .el-icon-close:before {
-  content: image-url("close_btn.svg");
+  content: url("/images/close_btn.svg");
 }
 
 header .main-menu-dialog .el-dialog__body {
@@ -3125,7 +3125,7 @@ header .main-menu-dialog ul {
 header .main-menu-dialog ul li a {
   display: block;
   color: white;
-  font-size: 1.4em;
+  font-size: 1.3em;
   padding: 0.4em 1em;
   border-bottom: solid 1px;
   text-decoration: none;
