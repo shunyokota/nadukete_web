@@ -7,6 +7,7 @@
     <title>なづけて</title>
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/element-ui/index.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="/js/vue.js"></script>
     <script type="text/javascript" src="/js/element-ui/index.js"></script>
     <script type="text/javascript" src="/js/app.js"></script>
@@ -26,12 +27,17 @@
         </a>
     </div>
 
-    <el-dialog :visible.sync="registry_visible" custom-class="main-menu-dialog" v-cloak="v-cloak">
+    <el-dialog :visible.sync="registry_visible" custom-class="common-dialog" v-cloak="v-cloak">
         <ul>
             @if (!Auth::user())
             <li>
                 <a href="/auth/twitter">Twitterで新規登録/ログイン</a>
             </li>
+            @endif
+            @if (Auth::user())
+                <li>
+                    <a href="/mypage">マイページ</a>
+                </li>
             @endif
             <li>
                 <a>なづけてとは？</a>
@@ -52,20 +58,8 @@
     </el-dialog>
 </header>
 
-
-<div class="container">
-<nav class="navbar navbar-default">
-<!-- Navbar Contents -->
-</nav>
-@if (!Auth::user())
-<a href="/auth/twitter">Twitterで新規登録/ログイン</a>
-@endif
-</div>
-@if (Auth::user())
-{{ Auth::user()->name }}
-<a href="/auth/logout">ログアウト</a>
-@endif
-
-@yield('content')
+<main>
+    @yield('content')
+</main>
 </body>
 </html>

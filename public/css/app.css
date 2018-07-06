@@ -3053,6 +3053,43 @@
   clip: auto;
 }
 
+.avatar-wrapper {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.avatar-wrapper img.avatar {
+  width: 200px;
+  border-radius: 500px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.user-info-wrapper {
+  text-align: center;
+  border-bottom: 1px solid;
+  border-color: #617280;
+  padding-bottom: 1em;
+}
+
+.user-info-wrapper .nickname {
+  color: #617280;
+}
+
+.user-info-wrapper p {
+  color: #617280;
+}
+
+.btn-area-wrapper {
+  text-align: center;
+  margin: 2em 0 1em 0;
+}
+
+.btn-area-wrapper button {
+  margin-bottom: 10px;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -3103,34 +3140,6 @@ header #header-inner a#hamburger {
   top: 15px;
 }
 
-header .main-menu-dialog {
-  background-color: #FFCA9E;
-  width: 80%;
-}
-
-header .main-menu-dialog .el-icon-close:before {
-  content: url("/images/close_btn.svg");
-}
-
-header .main-menu-dialog .el-dialog__body {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-header .main-menu-dialog ul {
-  padding-left: 0;
-  list-style-type: none;
-}
-
-header .main-menu-dialog ul li a {
-  display: block;
-  color: white;
-  font-size: 1.3em;
-  padding: 0.4em 1em;
-  border-bottom: solid 1px;
-  text-decoration: none;
-}
-
 header #hamburger {
   position: relative;
   height: 24px;
@@ -3162,5 +3171,74 @@ header #hamburger div:nth-of-type(2) {
 
 header #hamburger div:nth-of-type(3) {
   bottom: 0;
+}
+
+.common-dialog {
+  background-color: #FFCA9E !important;
+  width: 80%  !important;
+}
+
+.common-dialog .el-icon-close:before {
+  content: url("/images/close_btn.svg");
+}
+
+.common-dialog .el-dialog__body {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.common-dialog ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.common-dialog ul li a {
+  display: block;
+  color: white;
+  font-size: 1.3em;
+  padding: 0.4em 1em;
+  border-bottom: solid 1px;
+  text-decoration: none;
+}
+
+.common-dialog .dialog-content {
+  padding-top: 2.5em;
+}
+
+.common-dialog .dialog-content textarea {
+  width: 80%;
+  height: 25em;
+  margin-bottom: 2em;
+}
+
+main {
+  background: #F2F2F2;
+  padding: 20px 0;
+}
+
+main .content {
+  background: white;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid;
+  border-color: #FFCA9E;
+  padding: 0 10px;
+  margin: 0 30px;
+}
+
+button.primary {
+  background: #FFCA9E;
+  color: white;
+  font-size: 15px;
+  border: none;
+  border-radius: 5px;
+  width: 200px;
+  padding: 5px;
+}
+
+button.primary.inverted {
+  background: white;
+  color: #FFCA9E;
 }
 

@@ -1,0 +1,31 @@
+.avatar-wrapper {
+  //width: 80%;
+  text-align: center;
+  padding-top: 20px;
+  img.avatar {
+    width: 200px;
+    border-radius: 500px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.user-info-wrapper {
+  text-align: center;
+  .nickname { color: #617280; }
+  p { color: #617280; }
+
+  border-bottom: 1px solid;
+  border-color: #617280;
+  padding-bottom: 1em;
+}
+
+.btn-area-wrapper {
+  text-align: center;
+  margin: 2em 0 1em 0;
+  button {
+    margin-bottom: 10px;
+  }
+
+}

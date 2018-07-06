@@ -6,8 +6,12 @@
 // Variables
 @import "variables";
 
+// Pages
+@import "mypage";
+
 $theme-color: #FFCA9E;
 $key-color: #FFAF6C;
+$main-background-color: #F2F2F2;
 
 body {
   margin: 0;
@@ -59,34 +63,6 @@ header {
 
   }
 
-  .main-menu-dialog {
-    background-color: $theme-color;
-    width: 80%;
-
-    .el-icon-close:before {
-      content: url('/images/close_btn.svg');
-    }
-
-    .el-dialog__body {
-      padding-left: 0;
-      padding-right: 0;
-    }
-
-    ul {
-      padding-left: 0;
-      list-style-type: none;
-
-      li a {
-        display:block;
-        color: white;
-        font-size: 1.3em;
-        padding: 0.4em 1em;
-        border-bottom: solid 1px;
-        text-decoration: none;
-      }
-    }
-  }
-
   #hamburger {
     position: relative;
     height: 24px;
@@ -117,4 +93,72 @@ header {
   #hamburger div:nth-of-type(3) {
     bottom: 0;
   }
+}
+
+
+.common-dialog {
+  background-color: $theme-color !important;
+  width: 80%  !important;
+
+  .el-icon-close:before {
+    content: url('/images/close_btn.svg');
+  }
+
+  .el-dialog__body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  ul {
+    padding-left: 0;
+    list-style-type: none;
+
+    li a {
+      display:block;
+      color: white;
+      font-size: 1.3em;
+      padding: 0.4em 1em;
+      border-bottom: solid 1px;
+      text-decoration: none;
+    }
+  }
+  .dialog-content {
+    padding-top: 2.5em;
+    textarea {
+      width: 80%;
+      height: 25em;
+      margin-bottom: 2em;
+    }
+  }
+}
+
+main {
+  background: $main-background-color;
+  padding: 20px 0;
+  .content {
+    background: white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid;
+    border-color: $theme-color;
+    padding: 0 10px;
+    margin: 0 30px;
+    //margin-top: 20px;
+  }
+}
+
+button.primary {
+  background: $theme-color;
+  color: white;
+  //font-size: 1em;
+  font-size: 15px;
+  border: none;
+  border-radius: 5px;
+  width: 200px;
+  padding: 5px;
+}
+button.primary.inverted {
+  background: white;
+  color: $theme-color;
 }

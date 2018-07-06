@@ -1,0 +1,30 @@
+@extends('layouts.app')
+
+@section('content')
+    <script src="/js/mypage.js"></script>
+    <div class="content">
+        <div class="avatar-wrapper">
+            <img class="avatar" src="{{Auth::user()->avatar}}" />
+        </div>
+
+        <div class="user-info-wrapper">
+            <h2>{{Auth::user()->name}}</h2>
+            <div class="nickname">{{"@"}}{{Auth::user()->nickname}}</div>
+            <p>{{Auth::user()->description}}</p>
+        </div>
+
+        <div id="btn-area" class="btn-area-wrapper">
+            <button class="primary" @click="theme_form_visible = true">なづけてもらう</button>
+            <button class="primary">My なづけた</button>
+            <button class="primary">My なづけて</button>
+
+
+            <el-dialog :visible.sync="theme_form_visible" custom-class="common-dialog" v-cloak="v-cloak">
+                <div class="dialog-content">
+                    <textarea></textarea>
+                    <button class="primary inverted">なづけてもらう</button>
+                </div>
+            </el-dialog>
+        </div>
+    </div>
+@endsection

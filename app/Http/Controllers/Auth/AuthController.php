@@ -55,7 +55,8 @@ class AuthController extends Controller
             'name' => $twitterUser->name,
             'nickname' => $twitterUser->nickname,
             'twitter_id' => $twitterUser->id,
-            'avatar' => $twitterUser->avatar_original
+            'avatar' => $twitterUser->avatar_original,
+            'description' => $twitterUser->user['description'],
         ]);
     }
 }
