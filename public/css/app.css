@@ -3223,8 +3223,23 @@ main .content {
   margin-right: auto;
   border: 1px solid;
   border-color: #FFCA9E;
-  padding: 0 10px;
+  padding: 0 10px 20px 10px;
   margin: 0 30px;
+}
+
+main .content .theme {
+  padding: 10px;
+}
+
+main .content .theme .theme-header {
+  padding: 0.2em 0;
+}
+
+main .content .theme .theme-content {
+  border: 1px solid;
+  border-color: #979797;
+  padding: 0 10px;
+  padding: 1em;
 }
 
 button.primary {

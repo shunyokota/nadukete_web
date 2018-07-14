@@ -16,13 +16,16 @@
         <div id="btn-area" class="btn-area-wrapper">
             <button class="primary" @click="theme_form_visible = true">なづけてもらう</button>
             <button class="primary">My なづけた</button>
-            <button class="primary">My なづけて</button>
+            <button class="primary" onclick="location.href='/mypage/themes'">My なづけて</button>
 
 
             <el-dialog :visible.sync="theme_form_visible" custom-class="common-dialog" v-cloak="v-cloak">
                 <div class="dialog-content">
-                    <textarea></textarea>
-                    <button class="primary inverted">なづけてもらう</button>
+                    <form action="/themes" method="POST">
+                        {{ csrf_field() }}
+                        <textarea name="content"></textarea>
+                        <button class="primary inverted">なづけてもらう</button>
+                    </form>
                 </div>
             </el-dialog>
         </div>

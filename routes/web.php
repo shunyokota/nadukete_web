@@ -12,7 +12,9 @@
 */
 
 Route::get('/', 'ThemeController@index');
+Route::post('/themes', 'ThemeController@create');
 Route::get('mypage', 'MypageController@index');
+Route::get('mypage/themes', 'MypageController@themes');
 Route::get('auth/twitter', 'Auth\AuthController@redirectToProvider');
 Route::get('auth/twitter/callback', 'Auth\AuthController@handleProviderCallback');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');

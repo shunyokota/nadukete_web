@@ -35,8 +35,8 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
     'twitter' => [
-        'client_id' => 'giQFZNVT5uLfNeIKjyDfSHUFR',
-        'client_secret' => 'wWlKbLYHevNde6MVvVJMJOrI9XafgSziduVkpPcTJbhqGSssFT',
+        'client_id' => config('const.TWITTER_APP.id'),
+        'client_secret' => config('const.TWITTER_APP.secret'),
         'redirect' => 'http://192.168.33.11:3000/auth/twitter/callback',
     ],
 

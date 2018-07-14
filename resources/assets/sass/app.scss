@@ -12,6 +12,7 @@
 $theme-color: #FFCA9E;
 $key-color: #FFAF6C;
 $main-background-color: #F2F2F2;
+$gray-border-color: #979797;
 
 body {
   margin: 0;
@@ -142,9 +143,21 @@ main {
     margin-right: auto;
     border: 1px solid;
     border-color: $theme-color;
-    padding: 0 10px;
+    padding: 0 10px 20px 10px;
     margin: 0 30px;
-    //margin-top: 20px;
+
+    .theme {
+      padding: 10px;
+      .theme-header {
+        padding: 0.2em 0;
+      }
+      .theme-content {
+        border: 1px solid;
+        border-color: $gray-border-color;
+        padding: 0 10px;
+        padding: 1em;
+      }
+    }
   }
 }
 
