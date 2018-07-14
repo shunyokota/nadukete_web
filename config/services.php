@@ -1,5 +1,6 @@
 <?php
 
+
 return [
 
     /*
@@ -37,7 +38,7 @@ return [
     'twitter' => [
         'client_id' => config('const.TWITTER_APP.id'),
         'client_secret' => config('const.TWITTER_APP.secret'),
-        'redirect' => 'http://192.168.33.11:3000/auth/twitter/callback',
+        'redirect' => '/auth/twitter/callback',
     ],
 
 ];
