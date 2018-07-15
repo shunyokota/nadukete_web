@@ -9,7 +9,7 @@ class Theme extends Model
     protected $fillable = ['content'];
 
     public function user() {
-        $this->belongsTo('App\User', 'foreign_key');
+        return $this->belongsTo('App\User');
     }
     //
 }

@@ -3093,6 +3093,7 @@
 body {
   margin: 0;
   padding: 0;
+  background: #F2F2F2;
 }
 
 header {
@@ -3212,7 +3213,6 @@ header #hamburger div:nth-of-type(3) {
 }
 
 main {
-  background: #F2F2F2;
   padding: 20px 0;
 }
 
@@ -3227,19 +3227,82 @@ main .content {
   margin: 0 30px;
 }
 
-main .content .theme {
+main .content .theme-wrapper .theme {
   padding: 10px;
 }
 
-main .content .theme .theme-header {
+main .content .theme-wrapper .theme .theme-header {
   padding: 0.2em 0;
+  display: table;
+  width: 100%;
 }
 
-main .content .theme .theme-content {
+main .content .theme-wrapper .theme .theme-header .title {
+  font-weight: bold;
+  display: table-cell;
+}
+
+main .content .theme-wrapper .theme .theme-header .user {
+  display: table-cell;
+  text-align: right;
+}
+
+main .content .theme-wrapper .theme .theme-header .user img {
+  width: 20px;
+  border-radius: 20px;
+}
+
+main .content .theme-wrapper .theme .theme-header .user .my-theme {
+  color: #FFAF6C;
+}
+
+main .content .theme-wrapper .theme .theme-content {
   border: 1px solid;
   border-color: #979797;
   padding: 0 10px;
   padding: 1em;
+}
+
+main .content .theme-wrapper .theme .theme-footer {
+  display: table;
+  width: 100%;
+  padding-top: 0.5em;
+}
+
+main .content .theme-wrapper .theme .theme-footer .answer-count {
+  display: table-cell;
+}
+
+main .content .theme-wrapper .theme .theme-footer .date {
+  display: table-cell;
+  text-align: right;
+}
+
+main .content .theme-wrapper .theme-answer-separator {
+  margin-bottom: 1em;
+}
+
+main .content .theme-wrapper .theme-separator {
+  background-color: #FFCA9E;
+  border: none;
+  height: 0.1em;
+  margin-top: 2em;
+}
+
+main .content .answers .no-answer {
+  background: #FFCA9E;
+  color: #ffffff;
+  padding: 0.5em;
+  border-radius: 5px;
+}
+
+main .content .answers .no-answer .text-area {
+  padding: 0.2 0.5em;
+}
+
+main .content .answers .no-answer .btn-area {
+  text-align: center;
+  padding: 1em 0 0.5em 0;
 }
 
 button.primary {

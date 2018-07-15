@@ -3,11 +3,9 @@
 @section('content')
     <div class="content">
         @foreach($themes as $theme)
-            <div class="theme">
-                <div class="theme-header"><span>お題</span></div>
-
-                <div class="theme-content">{{$theme->content}}</div>
-            </div>
+            @foreach($themes as $theme)
+                @include('themes.partials.theme', ['theme' => $theme, 'mypage' => true])
+            @endforeach
         @endforeach
     </div>
 @endsection
