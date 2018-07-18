@@ -12,10 +12,12 @@
 $theme-color: #FFCA9E;
 $key-color: #FFAF6C;
 $main-background-color: #F2F2F2;
+$gray-border-color: #979797;
 
 body {
   margin: 0;
   padding: 0;
+  background: $main-background-color;
 }
 
 header {
@@ -133,7 +135,6 @@ header {
 }
 
 main {
-  background: $main-background-color;
   padding: 20px 0;
   .content {
     background: white;
@@ -142,9 +143,77 @@ main {
     margin-right: auto;
     border: 1px solid;
     border-color: $theme-color;
-    padding: 0 10px;
+    padding: 0 10px 20px 10px;
     margin: 0 30px;
-    //margin-top: 20px;
+
+    .theme-wrapper {
+      .theme {
+        padding: 10px;
+        .theme-header {
+          padding: 0.2em 0;
+          display: table;
+          width: 100%;
+          .title {
+            font-weight: bold;
+            display: table-cell;
+          }
+          .user {
+            display: table-cell;
+            text-align: right;
+            img {
+              width: 20px;
+              border-radius: 20px;
+            }
+            .my-theme {
+              color: $key-color;
+            }
+          }
+        }
+        .theme-content {
+          border: 1px solid;
+          border-color: $gray-border-color;
+          padding: 0 10px;
+          padding: 1em;
+        }
+        .theme-footer {
+          display: table;
+          width: 100%;
+          padding-top: 0.5em;
+          .answer-count {
+            display: table-cell;
+          }
+          .date {
+            display: table-cell;
+            text-align: right;
+          }
+        }
+      }
+      .theme-answer-separator {
+        margin-bottom: 1em;
+      }
+      .theme-separator {
+        background-color: $theme-color;
+        border: none;
+        height: 0.1em;
+        margin-top: 2em;
+      }
+    }
+
+    .answers {
+      .no-answer {
+        background: $theme-color;
+        color: #ffffff;
+        padding: 0.5em;
+        border-radius: 5px;
+        .text-area {
+          padding: 0.2 0.5em;
+        }
+        .btn-area {
+          text-align: center;
+          padding: 1em 0 0.5em 0;
+        }
+      }
+    }
   }
 }
 

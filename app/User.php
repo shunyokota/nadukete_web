@@ -15,7 +15,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'nickname', 'twitter_id', 'avatar', 'description'
+        'name', 'email', 'password', 'nickname', 'twitter_id', 'avatar', 'description',
+        'twitter_token', 'twitter_token_secret'
     ];
 
     /**
@@ -26,4 +27,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function themes()
+    {
+        return $this->hasMany('App\Theme');
+    }
 }

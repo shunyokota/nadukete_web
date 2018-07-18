@@ -35,7 +35,7 @@ class AuthController extends Controller
         }
         $authUser = $this->findOrCreateUser($user);
         Auth::login($authUser, true);
-        return redirect('/');
+        return redirect('/mypage');
     }
 
     public function getLogout() {
@@ -44,8 +44,13 @@ class AuthController extends Controller
     }
 
     private function findOrCreateUser($twitterUser){
+//        var_dump($twitterUser);
+//        exit;
         $authUser = User::where('twitter_id', $twitterUser->id)->first();
         if ($authUser){
+            $authUser->twitter_token = $twitterUser->token;
+            $authUser->twitter_token_secret = $twitterUser->tokenSecret;
+            $authUser->save();
             return $authUser;
         }
 //        var_dump($twitterUser);
@@ -55,6 +60,8 @@ class AuthController extends Controller
             'name' => $twitterUser->name,
             'nickname' => $twitterUser->nickname,
             'twitter_id' => $twitterUser->id,
+            'twitter_token' => $twitterUser->token,
+            'twitter_token_secret' => $twitterUser->tokenSecret,
             'avatar' => $twitterUser->avatar_original,
             'description' => $twitterUser->user['description'],
         ]);
