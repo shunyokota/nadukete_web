@@ -4,16 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Theme extends Model
+class Naming extends Model
 {
-    protected $fillable = ['content'];
-
     public function user() {
         return $this->belongsTo('App\User');
     }
 
-    public function namings()
-    {
-        return $this->hasMany('App\Naming');
+    public function theme() {
+        return $this->belongsTo('App\Theme');
     }
 }
