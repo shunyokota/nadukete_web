@@ -12,7 +12,9 @@
 */
 
 Route::get('/', 'ThemeController@index');
+Route::get('naming', 'NamingController@create');
 Route::post('/themes', 'ThemeController@create');
+Route::post('themes/{theme_id}/namings', 'NamingController@create');
 Route::get('mypage', 'MypageController@index');
 Route::get('mypage/themes', 'MypageController@themes');
 Route::get('auth/twitter', 'Auth\AuthController@redirectToProvider');

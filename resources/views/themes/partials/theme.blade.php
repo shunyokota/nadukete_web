@@ -17,23 +17,42 @@
         <div class="theme-content">{{$theme->content}}</div>
 
         <div class="theme-footer">
-            <span class="answer-count">0&nbsp;answers</span>
+            <span class="answer-count">{{$theme->namings()->count()}}&nbsp;answers</span>
             <span class="date">{{$theme->created_at->format('Y/m/d')}}</span>
         </div>
     </div>
     <hr class="theme-answer-separator">
     <div class="answers">
-        <div class="no-answer">
-            <div class="text-area">
-            Fuck!!&nbsp;まだ誰からもなづけてもらってません。<br>
-            (´・ω・｀)ｼｮﾎﾞｰﾝ
+        @if ($theme->namings()->count() < 1)
+            <div class="no-answer">
+                <div class="text-area">
+                Fuck!!&nbsp;まだ誰からもなづけてもらってません。<br>
+                (´・ω・｀)ｼｮﾎﾞｰﾝ
+                </div>
+                @if (!Auth::user() || Auth::user()->id != $theme->user_id)
+                <div class="btn-area" v-on:click="open_naming_dialog({{$theme->id}})">
+                    <button class="primary inverted">わたしが最初になづける</button>
+                </div>
+                @endif
             </div>
-            @if (!Auth::user() || Auth::user()->id != $theme->user_id)
-            <div class="btn-area">
-                <button class="primary inverted">わたしが最初になづける</button>
+        @else
+            @php
+                $bestNaming = $theme->namings()->first();
+            @endphp
+            <div class="answer">
+                <div class="naming-header">
+                    <img class="trophy" src="/images/trophy.svg">
+                    <span class="best-answer">Best Answer</span>
+                    <div class="answerer-wrapper">
+                        <div class="answerer">
+                            <img class="avatar" src="{{$bestNaming->user->avatar}}" />
+                            <span class="name">{{$bestNaming->user->nickname}}</span>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="naming">{{$bestNaming->name}}</h3>
             </div>
-            @endif
-        </div>
+        @endif
     </div>
     <hr class="theme-separator">
 </div>

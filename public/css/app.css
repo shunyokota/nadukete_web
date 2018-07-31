@@ -3094,6 +3094,17 @@ body {
   margin: 0;
   padding: 0;
   background: #F2F2F2;
+  color: #555555;
+}
+
+textarea,
+input[type=text] {
+  border-style: none;
+}
+
+textarea {
+  border-radius: 10px;
+  resize: none;
 }
 
 header {
@@ -3186,6 +3197,7 @@ header #hamburger div:nth-of-type(3) {
 .common-dialog .el-dialog__body {
   padding-left: 0;
   padding-right: 0;
+  text-align: center;
 }
 
 .common-dialog ul {
@@ -3209,6 +3221,12 @@ header #hamburger div:nth-of-type(3) {
 .common-dialog .dialog-content textarea {
   width: 80%;
   height: 25em;
+  margin-bottom: 2em;
+}
+
+.common-dialog .dialog-content input[type=text] {
+  width: 65%;
+  height: 3em;
   margin-bottom: 2em;
 }
 
@@ -3303,6 +3321,54 @@ main .content .answers .no-answer .text-area {
 main .content .answers .no-answer .btn-area {
   text-align: center;
   padding: 1em 0 0.5em 0;
+}
+
+main .content .answers .answer .naming-header {
+  position: relative;
+  height: 30px;
+}
+
+main .content .answers .answer .naming-header img.trophy {
+  position: absolute;
+  height: 25px;
+  left: 10px;
+}
+
+main .content .answers .answer .naming-header .best-answer {
+  position: absolute;
+  color: #74BFFF;
+  font-weight: bold;
+  left: 40px;
+}
+
+main .content .answers .answer .naming-header .answerer-wrapper {
+  position: absolute;
+  display: table;
+  right: 10px;
+}
+
+main .content .answers .answer .naming-header .answerer-wrapper .answerer {
+  display: table-row;
+  vertical-align: middle;
+}
+
+main .content .answers .answer .naming-header .answerer-wrapper .answerer .avatar {
+  display: table-cell;
+  width: 25px;
+  border-radius: 20px;
+  margin-right: 5px;
+}
+
+main .content .answers .answer .naming-header .answerer-wrapper .answerer .name {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+main .content .answers .answer .naming {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.7em;
+  margin: 0;
 }
 
 button.primary {
