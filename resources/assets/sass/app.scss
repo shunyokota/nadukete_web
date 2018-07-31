@@ -18,7 +18,21 @@ body {
   margin: 0;
   padding: 0;
   background: $main-background-color;
+  color: $default-font-color;
 }
+
+textarea,input[type=text] {
+  border-style: none;
+}
+textarea {
+  border-radius: 10px;
+  resize: none;
+}
+//input[type=text] {
+//  border-style: none;
+//  border-radius: 10px;
+//  resize: none;
+//}
 
 header {
   border-top: 3px solid #FFAF6C;
@@ -109,6 +123,7 @@ header {
   .el-dialog__body {
     padding-left: 0;
     padding-right: 0;
+    text-align: center;
   }
 
   ul {
@@ -129,6 +144,11 @@ header {
     textarea {
       width: 80%;
       height: 25em;
+      margin-bottom: 2em;
+    }
+    input[type=text] {
+      width: 65%;
+      height: 3em;
       margin-bottom: 2em;
     }
   }
@@ -211,6 +231,48 @@ main {
         .btn-area {
           text-align: center;
           padding: 1em 0 0.5em 0;
+        }
+      }
+      .answer {
+        .naming-header {
+          position: relative;
+          height:30px;
+          img.trophy {
+            position: absolute;
+            height: 25px;
+            left: 10px;
+          }
+          .best-answer {
+            position: absolute;
+            color: #74BFFF;
+            font-weight: bold;
+            left: 40px;
+          }
+          .answerer-wrapper {
+            position: absolute;
+            display: table;
+            right: 10px;
+            .answerer {
+              display: table-row;
+              vertical-align: middle;
+              .avatar {
+                display:table-cell;
+                width: 25px;
+                border-radius: 20px;
+                margin-right: 5px;
+              }
+              .name {
+                display: table-cell;
+                vertical-align: middle;
+              }
+            }
+          }
+        }
+        .naming {
+          font-weight: bold;
+          text-align: center;
+          font-size: 1.7em;
+          margin: 0;
         }
       }
     }
