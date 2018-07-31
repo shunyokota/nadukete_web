@@ -8,14 +8,9 @@ use App\Naming;
 
 class NamingController extends Controller
 {
-    public function index(Request $request)
-    {
-    }
     public function create(Request $request, $theme_id) {
-        var_dump($theme_id);
+        //不正なIDならエラー
         $theme = Theme::where('id', $theme_id)->firstOrFail();
-//        var_dump($theme);
-//        exit;
         $this->validate($request, [
             'name' => 'required|max:255',
         ]);
@@ -23,8 +18,6 @@ class NamingController extends Controller
         $naming->fill($request->all());
         $naming->user_id = $request->user()->id;
         $naming->theme_id = $theme_id;
-//        $naming->associate($request->user());
-//        $naming->associate($theme);
         $naming->save();
 
         return redirect('/mypage');
