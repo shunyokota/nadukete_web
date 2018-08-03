@@ -4,7 +4,7 @@
             <span class="title">お題</span>
             @if ($theme->user)
             <span class="user">
-                @if ($theme->user_id == Auth::user()->id)
+                @if (Auth::user() && $theme->user_id == Auth::user()->id)
                     <span class="my-theme">わたしのお題</span>
                 @else
                     <img class="avatar" src="{{$theme->user->avatar}}" />
@@ -29,7 +29,7 @@
                 Fuck!!&nbsp;まだ誰からもなづけてもらってません。<br>
                 (´・ω・｀)ｼｮﾎﾞｰﾝ
                 </div>
-                @if (!Auth::user() || Auth::user()->id != $theme->user_id)
+                @if (Auth::user() && Auth::user()->id != $theme->user_id)
                 <div class="btn-area" v-on:click="open_naming_dialog({{$theme->id}})">
                     <button class="primary inverted">わたしが最初になづける</button>
                 </div>
