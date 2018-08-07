@@ -20,8 +20,8 @@
     <div id="header-inner">
         <a href="/">
             <img id="logo" src="{{ asset('/images/logo.svg') }}" alt="なづけて">
+            <h1 id="service-title">なづけて</h1>
         </a>
-        <h1 id="service-title">なづけて</h1>
         <a id="hamburger" @click="registry_visible = true">
             <i class="fa fa-bars fa-2x"></i>
         </a>
@@ -39,6 +39,9 @@
                     <a href="/mypage">マイページ</a>
                 </li>
             @endif
+            <li>
+                <a href="/">なづけて一覧</a>
+            </li>
             <li>
                 <a>なづけてとは？</a>
             </li>

@@ -21,6 +21,10 @@ body {
   color: $default-font-color;
 }
 
+a {
+  text-decoration: none;
+}
+
 textarea,input[type=text] {
   border-style: none;
 }
@@ -194,6 +198,7 @@ main {
           border-color: $gray-border-color;
           padding: 0 10px;
           padding: 1em;
+          color: $default-font-color;
         }
         .theme-footer {
           display: table;
@@ -218,6 +223,10 @@ main {
         margin-top: 2em;
       }
     }
+    .btn-area {
+      text-align: center;
+      padding: 1em 0 0.5em 0;
+    }
 
     .answers {
       .no-answer {
@@ -228,12 +237,9 @@ main {
         .text-area {
           padding: 0.2 0.5em;
         }
-        .btn-area {
-          text-align: center;
-          padding: 1em 0 0.5em 0;
-        }
       }
       .answer {
+        padding-top: 1em;
         .naming-header {
           position: relative;
           height:30px;

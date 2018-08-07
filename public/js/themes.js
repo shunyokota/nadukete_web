@@ -10,6 +10,7 @@ $(function() {
                 this.theme_id = theme_id;
                 this.naming_form_visible = true;
             }
-        }
+        },
+
     });
 });

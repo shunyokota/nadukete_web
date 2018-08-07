@@ -3097,6 +3097,10 @@ body {
   color: #555555;
 }
 
+a {
+  text-decoration: none;
+}
+
 textarea,
 input[type=text] {
   border-style: none;
@@ -3279,6 +3283,7 @@ main .content .theme-wrapper .theme .theme-content {
   border-color: #979797;
   padding: 0 10px;
   padding: 1em;
+  color: #555555;
 }
 
 main .content .theme-wrapper .theme .theme-footer {
@@ -3307,6 +3312,11 @@ main .content .theme-wrapper .theme-separator {
   margin-top: 2em;
 }
 
+main .content .btn-area {
+  text-align: center;
+  padding: 1em 0 0.5em 0;
+}
+
 main .content .answers .no-answer {
   background: #FFCA9E;
   color: #ffffff;
@@ -3318,9 +3328,8 @@ main .content .answers .no-answer .text-area {
   padding: 0.2 0.5em;
 }
 
-main .content .answers .no-answer .btn-area {
-  text-align: center;
-  padding: 1em 0 0.5em 0;
+main .content .answers .answer {
+  padding-top: 1em;
 }
 
 main .content .answers .answer .naming-header {
