@@ -50,6 +50,7 @@ class AuthController extends Controller
         if ($authUser){
             $authUser->twitter_token = $twitterUser->token;
             $authUser->twitter_token_secret = $twitterUser->tokenSecret;
+            $authUser->avatar = $twitterUser->avatar_original;
             $authUser->save();
             return $authUser;
         }
