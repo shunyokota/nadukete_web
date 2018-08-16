@@ -3380,6 +3380,31 @@ main .content .answers .answer .naming {
   margin: 0;
 }
 
+main .content .answers .answer .point-wrapper {
+  text-align: center;
+  margin-top: 0.5em;
+  height: 2em;
+}
+
+main .content .answers .answer .point-wrapper .point {
+  position: relative;
+}
+
+main .content .answers .answer .point-wrapper .point img.star {
+  position: absolute;
+  left: -20px;
+}
+
+main .content .answers .answer .point-wrapper .point .point-value {
+  position: absolute;
+  left: 10px;
+}
+
+main .content .answers .answer .marking-wrapper {
+  margin-top: 0.4em;
+  text-align: center;
+}
+
 button.primary {
   background: #FFCA9E;
   color: white;

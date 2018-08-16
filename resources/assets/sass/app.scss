@@ -280,6 +280,26 @@ main {
           font-size: 1.7em;
           margin: 0;
         }
+        .point-wrapper {
+          text-align: center;
+          margin-top: 0.5em;
+          height: 2em;
+          .point {
+            position:relative;
+            img.star {
+              position: absolute;
+              left: -20px;
+            }
+            .point-value {
+              position: absolute;
+              left: 10px;
+            }
+          }
+        }
+        .marking-wrapper {
+          margin-top: 0.4em;
+          text-align: center;
+        }
       }
     }
   }

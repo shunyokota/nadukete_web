@@ -70,6 +70,16 @@
                     </div>
                 </div>
                 <h3 class="naming">{{$naming->name}}</h3>
+                    <marking-star naming_id="{{$naming->id}}"
+                            @if (Auth::user())
+                                    v-bind:is_login="true"
+                                    point="{{$naming->pointOfUser(Auth::user()->id)}}"
+                            @else
+                                    v-bind:is_login="false"
+                                    point="0"
+                            @endif
+                            total_point_ini="{{$naming->totalPoint()}}"
+                    ></marking-star>
             </div>
             <hr class="theme-separator">
         @endforeach
