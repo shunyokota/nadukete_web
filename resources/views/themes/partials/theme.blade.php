@@ -74,9 +74,15 @@
                             @if (Auth::user())
                                     v-bind:is_login="true"
                                     point="{{$naming->pointOfUser(Auth::user()->id)}}"
+                                  @if (Auth::user()->id == $naming->user_id)
+                                        v-bind:is_mine="true"
+                                  @else
+                                        v-bind:is_mine="false"
+                                  @endif
                             @else
                                     v-bind:is_login="false"
                                     point="0"
+                                    v-bind:is_mine="false"
                             @endif
                             total_point_ini="{{$naming->totalPoint()}}"
                     ></marking-star>

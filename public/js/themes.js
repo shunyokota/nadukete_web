@@ -20,10 +20,10 @@ $(function() {
         '       </span>'+
         '   </div>' +
         '</div>',
-        props: ['naming_id', 'point', 'total_point_ini', 'is_login'],
+        props: ['naming_id', 'point', 'total_point_ini', 'is_login', 'is_mine'],
         methods: {
             marking: function(point) {
-                if (this.is_login) {
+                if (this.is_login && !this.is_mine) {
                     axios.post('/naming/' + this.naming_id + '/mark', {
                         _token: CSRF_TOKEN,
                         point: point

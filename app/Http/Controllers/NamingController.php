@@ -28,6 +28,7 @@ class NamingController extends Controller
         $naming = Naming::where('id', $naming_id)->firstOrFail();
         if ($naming->user_id == $request->user()->id) {
             //自分のなづけた名前を採点するとエラー
+            abort(400);
         }
         $star = Star::where('user_id', $request->user()->id)->where('naming_id', $naming_id)->first();
         if (empty($star)) {
