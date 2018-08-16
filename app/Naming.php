@@ -25,6 +25,6 @@ class Naming extends Model
     public function totalPoint() {
         $result = Star::select(DB::raw('sum(point) as totalPoint'))->where('naming_id', $this->id)->first();
         $totalPoint = $result->totalPoint;
-        return $totalPoint;
+        return $totalPoint ? $totalPoint : 0;
     }
 }
