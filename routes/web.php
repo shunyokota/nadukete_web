@@ -13,6 +13,7 @@
 
 Route::get('/', 'ThemeController@index');
 Route::post('/naming/{naming_id}/mark', 'NamingController@mark');
+Route::get('/naming/{naming_id}/getTotalPoint', 'NamingController@getTotalPoint');
 Route::post('/themes', 'ThemeController@create');
 Route::get('theme/{theme_id}', 'ThemeController@detail');
 Route::post('themes/{theme_id}/namings', 'NamingController@create');

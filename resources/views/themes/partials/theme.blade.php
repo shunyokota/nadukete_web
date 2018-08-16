@@ -70,18 +70,16 @@
                     </div>
                 </div>
                 <h3 class="naming">{{$naming->name}}</h3>
-                <div class="point-wrapper">
-                    <span class="point">
-                        <img class="star" src="/images/star.svg"><span class="point-value">{{$naming->totalPoint()}}</span>
-                    </span>
-                </div>
-                <div class="marking-wrapper">
-                    @if (Auth::user())
-                        <marking-star naming_id="{{$naming->id}}" point="{{$naming->pointOfUser(Auth::user()->id)}}"></marking-star>
-                    @else
-                        <marking-star naming_id="{{$naming->id}}" point="0"></marking-star>
-                    @endif
-                </div>
+                    <marking-star naming_id="{{$naming->id}}"
+                            @if (Auth::user())
+                                    v-bind:is_login="true"
+                                    point="{{$naming->pointOfUser(Auth::user()->id)}}"
+                            @else
+                                    v-bind:is_login="false"
+                                    point="0"
+                            @endif
+                            total_point_ini="{{$naming->totalPoint()}}"
+                    ></marking-star>
             </div>
             <hr class="theme-separator">
         @endforeach

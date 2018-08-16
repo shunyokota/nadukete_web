@@ -3,25 +3,38 @@ const REVERT_STAR_IMG = '/images/revert_star.svg';
 $(function() {
     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
     Vue.component('marking-star', {
-        template: '<span class="marking">' +
-        '             <img class="star" :src="star_img1" v-on:click="marking(1)">' +
-        '             <img class="star" :src="star_img2" v-on:click="marking(2)">' +
-        '             <img class="star" :src="star_img3" v-on:click="marking(3)">' +
-        '             <img class="star" :src="star_img4" v-on:click="marking(4)">' +
-        '             <img class="star" :src="star_img5" v-on:click="marking(5)">' +
-        '           </span>',
-        props: ['naming_id', 'point', 'total_point_ini'],
+        template:
+        '<div>' +
+        '   <div class="point-wrapper">' +
+        '       <span class="point">' +
+        '           <img class="star" src="/images/star.svg"><span class="point-value">{{total_point}}</span>' +
+        '       </span>' +
+        '   </div>' +
+        '   <div class="marking-wrapper">' +
+        '       <span class="marking">' +
+        '           <img class="star" :src="star_img1" v-on:click="marking(1)">' +
+        '           <img class="star" :src="star_img2" v-on:click="marking(2)">' +
+        '           <img class="star" :src="star_img3" v-on:click="marking(3)">' +
+        '           <img class="star" :src="star_img4" v-on:click="marking(4)">' +
+        '           <img class="star" :src="star_img5" v-on:click="marking(5)">' +
+        '       </span>'+
+        '   </div>' +
+        '</div>',
+        props: ['naming_id', 'point', 'total_point_ini', 'is_login'],
         methods: {
             marking: function(point) {
-                axios.post('/naming/' + this.naming_id + '/mark', {
-                    _token: CSRF_TOKEN,
-                    point: point
-                }).then(response => {
-                    this.setStar(response.data['point']);
-                    console.log(response);
-                }).catch(function (error) {
-                    console.log(error);
-                });
+                if (this.is_login) {
+                    axios.post('/naming/' + this.naming_id + '/mark', {
+                        _token: CSRF_TOKEN,
+                        point: point
+                    }).then(response => {
+                        this.setStar(response.data['point']);
+                        this.getTotalPoint();
+                        console.log(response);
+                    }).catch(function (error) {
+                        console.log(error);
+                    });
+                }
             },
             getTotalPoint: function() {
                 axios.get('/naming/' + this.naming_id + '/getTotalPoint',

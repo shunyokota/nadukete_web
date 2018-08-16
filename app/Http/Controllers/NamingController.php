@@ -40,4 +40,9 @@ class NamingController extends Controller
 
         return ['point' => $star->point];
     }
+
+    public function getTotalPoint(Request $request, $naming_id) {
+        $naming = Naming::findOrFail($naming_id);
+        return ['totalPoint' => $naming->totalPoint()];
+    }
 }
