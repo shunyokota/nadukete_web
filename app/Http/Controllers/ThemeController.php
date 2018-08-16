@@ -18,6 +18,8 @@ class ThemeController extends Controller
         return view('themes.detail', compact('theme'));
     }
 
+
+
     public function create(Request $request) {
         $this->validate($request, [
             'content' => 'required|max:255',

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Theme;
 use App\Naming;
+use App\Star;
 
 class NamingController extends Controller
 {
@@ -21,5 +22,22 @@ class NamingController extends Controller
         $naming->save();
 
         return redirect('/mypage');
+    }
+
+    public function mark(Request $request, $naming_id) {
+        $naming = Naming::where('id', $naming_id)->firstOrFail();
+        if ($naming->user_id == $request->user()->id) {
+            //自分のなづけた名前を採点するとエラー
+        }
+        $star = Star::where('user_id', $request->user()->id)->where('naming_id', $naming_id)->first();
+        if (empty($star)) {
+            $star = new Star();
+            $star->user_id = $request->user()->id;
+            $star->naming_id = $naming_id;
+        }
+        $star->point = $request->point;
+        $star->save();
+
+        return ['point' => $star->point];
     }
 }
