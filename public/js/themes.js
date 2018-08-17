@@ -10,7 +10,7 @@ $(function() {
         '           <img class="star" src="/images/star.svg"><span class="point-value">{{total_point}}</span>' +
         '       </span>' +
         '   </div>' +
-        '   <div class="marking-wrapper">' +
+        '   <div class="marking-wrapper" v-if="!is_mine">' +
         '       <span class="marking">' +
         '           <img class="star" :src="star_img1" v-on:click="marking(1)">' +
         '           <img class="star" :src="star_img2" v-on:click="marking(2)">' +
@@ -78,13 +78,15 @@ $(function() {
             return {
                 naming_form_visible: false,
                 login_for_naming_visible: false,
-                theme_id: 0
+                theme_id: 0,
+                name: ''
             }
         },
 
         methods: {
             open_naming_dialog: function (theme_id) {
                 this.theme_id = theme_id;
+                this.name = '';
                 this.naming_form_visible = true;
             },
             open_login_for_naming_dialog: function() {

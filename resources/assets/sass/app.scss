@@ -32,6 +32,9 @@ textarea {
   border-radius: 10px;
   resize: none;
 }
+input[type=text] {
+  border-radius: 5px;
+}
 //input[type=text] {
 //  border-style: none;
 //  border-radius: 10px;
@@ -147,13 +150,17 @@ header {
     padding-top: 2.5em;
     textarea {
       width: 80%;
-      height: 25em;
+      height: 12em;
       margin-bottom: 2em;
+      padding: 0.3em;
+      font-size: 1.3em;
     }
     input[type=text] {
       width: 65%;
-      height: 3em;
+      height: 1.8em;
       margin-bottom: 2em;
+      padding: 0 0.5em;
+      font-size: 1.3em;
     }
     p {
       color: white;

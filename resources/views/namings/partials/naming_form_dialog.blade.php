@@ -3,7 +3,7 @@
         <form :action="`/themes/${theme_id}/namings`" method="POST">
             {{ csrf_field() }}
             <div class="text-wrapper">
-                <input type="text" name="name" />
+                <input type="text" name="name" v-model="name"/>
             </div>
             <button class="primary inverted">なづける</button>
         </form>
