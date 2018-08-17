@@ -77,6 +77,7 @@ $(function() {
         data: function () {
             return {
                 naming_form_visible: false,
+                login_for_naming_visible: false,
                 theme_id: 0
             }
         },
@@ -86,6 +87,9 @@ $(function() {
                 this.theme_id = theme_id;
                 this.naming_form_visible = true;
             },
+            open_login_for_naming_dialog: function() {
+                this.login_for_naming_visible = true;
+            }
 
         },
 

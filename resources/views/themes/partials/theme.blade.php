@@ -30,7 +30,13 @@
         </div>
     </div>
     @if (0 < $theme->namings()->count())
-        <div class="btn-area" v-on:click="open_naming_dialog({{$theme->id}})">
+
+        <div class="btn-area"
+            @if (Auth::user())
+             v-on:click="open_naming_dialog({{$theme->id}})"
+            @else
+             v-on:click="open_login_for_naming_dialog()"
+            @endif>
             <button class="primary">なづける</button>
         </div>
     @endif
@@ -48,6 +54,7 @@
             </div>
             @endif
         </div>
+        <hr class="theme-separator">
     </div>
     @else
     <div class="answers">

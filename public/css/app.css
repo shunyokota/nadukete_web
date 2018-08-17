@@ -3234,6 +3234,10 @@ header #hamburger div:nth-of-type(3) {
   margin-bottom: 2em;
 }
 
+.common-dialog .dialog-content p {
+  color: white;
+}
+
 main {
   padding: 20px 0;
 }
