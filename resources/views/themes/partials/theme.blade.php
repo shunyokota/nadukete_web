@@ -54,7 +54,9 @@
             </div>
             @endif
         </div>
+        @if (isset($last) && !$last)
         <hr class="theme-separator">
+        @endif
     </div>
     @else
     <div class="answers">
@@ -94,7 +96,9 @@
                             total_point_ini="{{$naming->totalPoint()}}"
                     ></marking-star>
             </div>
+            @if (isset($last) && !$last)
             <hr class="theme-separator">
+            @endif
         @endforeach
     </div>
     @endif
