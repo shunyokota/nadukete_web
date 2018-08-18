@@ -3317,7 +3317,8 @@ main .content .theme-wrapper .theme-answer-separator {
   margin-bottom: 1em;
 }
 
-main .content .theme-wrapper .theme-separator {
+main .content .theme-wrapper .theme-separator,
+main .content .theme-wrapper .naming-separator {
   background-color: #FFCA9E;
   border: none;
   height: 0.1em;

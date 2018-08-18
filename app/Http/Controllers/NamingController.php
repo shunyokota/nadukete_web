@@ -21,7 +21,9 @@ class NamingController extends Controller
         $naming->theme_id = $theme_id;
         $naming->save();
 
-        return redirect('/mypage');
+        $request->session()->flash('message', '新しくなづけた名前を登録しました。');
+
+        return redirect('/mypage/namings');
     }
 
     public function mark(Request $request, $naming_id) {

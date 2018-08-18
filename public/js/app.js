@@ -79,7 +79,12 @@ window.onload = function () {
     new Vue({
         el: '#main-header',
         data: function data() {
-            return { registry_visible: false, registry_form: {}, registry_data: [] };
+            return {
+                registry_visible: false,
+                registry_form: {},
+                registry_data: [],
+                flash_message_visible: document.getElementById('flash-message') ? true : false
+            };
         },
 
         methods: {

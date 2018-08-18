@@ -2,7 +2,12 @@ window.onload = function() {
     new Vue({
         el: '#main-header',
         data: function () {
-            return {registry_visible: false, registry_form: {}, registry_data: []}
+            return {
+                registry_visible: false,
+                registry_form: {},
+                registry_data: [],
+                flash_message_visible: false
+            }
         },
 
         methods: {

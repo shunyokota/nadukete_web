@@ -15,7 +15,9 @@
 </head>
 
 <body>
-
+@if(Session::has('message'))
+<div id="flash-message" style="display:none">{{ session('message') }}</div>
+@endif
 
 <header id="main-header">
     <div id="header-inner">
@@ -59,6 +61,13 @@
             @endif
 
         </ul>
+    </el-dialog>
+
+    <el-dialog :visible.sync="flash_message_visible" custom-class="common-dialog" v-cloak="v-cloak">
+        <div class="dialog-content">
+            <p>{{ session('message') !== null ? session('message') : '' }}</p>
+            <button class="primary inverted" @click="flash_message_visible = false">OK</button>
+        </div>
     </el-dialog>
 </header>
 

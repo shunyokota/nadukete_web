@@ -16,9 +16,12 @@ class MypageController extends Controller
     }
 
     public function themes(Request $request) {
-        $themes = $request->user()->themes()->get();
-//        var_dump($themes);
-//        exit;
+        $themes = $request->user()->themes()->orderBy('id', 'desc')->get();
         return view('mypage.themes', compact('themes'));
+    }
+
+    public function namings(Request $request) {
+        $namings = $request->user()->namings()->orderBy('id', 'desc')->get();
+        return view('mypage.namings', compact('namings'));
     }
 }

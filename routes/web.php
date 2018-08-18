@@ -19,6 +19,7 @@ Route::get('theme/{theme_id}', 'ThemeController@detail');
 Route::post('themes/{theme_id}/namings', 'NamingController@create');
 Route::get('mypage', 'MypageController@index');
 Route::get('mypage/themes', 'MypageController@themes');
+Route::get('mypage/namings', 'MypageController@namings');
 Route::get('auth/twitter', 'Auth\AuthController@redirectToProvider');
 Route::get('auth/twitter/callback', 'Auth\AuthController@handleProviderCallback');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
