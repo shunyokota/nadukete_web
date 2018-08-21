@@ -91,7 +91,7 @@
                                 point="0"
                                 v-bind:is_mine="false"
                         @endif
-                        total_point_ini="{{$naming->totalPoint()}}"
+                        total_point_ini="{{$naming->total_point}}"
                 ></marking-star>
             </div>
             @if (!$loop->last)

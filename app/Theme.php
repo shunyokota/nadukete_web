@@ -14,6 +14,6 @@ class Theme extends Model
 
     public function namings()
     {
-        return $this->hasMany('App\Naming');
+        return $this->hasMany('App\Naming')->orderBy('total_point', 'desc')->orderBy('id', 'desc');
     }
 }

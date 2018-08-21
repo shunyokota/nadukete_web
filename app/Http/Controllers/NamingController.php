@@ -39,13 +39,18 @@ class NamingController extends Controller
             $star->naming_id = $naming_id;
         }
         $star->point = $request->point;
+        $naming->totalPoint = $naming->calculateTotalPoint();
+
+        DB::beginTransaction();
         $star->save();
+        $naming->save();
+        DB::commit();
 
         return ['point' => $star->point];
     }
 
     public function getTotalPoint(Request $request, $naming_id) {
         $naming = Naming::findOrFail($naming_id);
-        return ['totalPoint' => $naming->totalPoint()];
+        return ['totalPoint' => $naming->total_point];
     }
 }

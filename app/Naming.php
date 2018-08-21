@@ -22,7 +22,7 @@ class Naming extends Model
         return empty($star) ? 0 : $star->point;
     }
 
-    public function totalPoint() {
+    public function calculateTotalPoint() {
         $result = Star::select(DB::raw('sum(point) as totalPoint'))->where('naming_id', $this->id)->first();
         $totalPoint = $result->totalPoint;
         return $totalPoint ? $totalPoint : 0;
