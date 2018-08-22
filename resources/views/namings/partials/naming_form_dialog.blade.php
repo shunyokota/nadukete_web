@@ -16,3 +16,4 @@
         <button class="primary inverted" onclick="location.href='/auth/twitter'">Twitterで新規登録/ログイン</button>
     </div>
 </el-dialog>
+

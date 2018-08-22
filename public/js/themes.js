@@ -19,6 +19,12 @@ $(function() {
         '           <img class="star" :src="star_img5" v-on:click="marking(5)">' +
         '       </span>'+
         '   </div>' +
+            '<el-dialog :visible.sync="login_for_marking_visible" custom-class="common-dialog" v-cloak="v-cloak">' +
+        '<div class="dialog-content">' +
+        '<p>採点するにはログインが必要です。</p>' +
+        '<button class="primary inverted" onclick="location.href=\'/auth/twitter\'">Twitterで新規登録/ログイン</button>' +
+        '</div>' +
+        '</el-dialog>'+
         '</div>',
         props: ['naming_id', 'point', 'total_point_ini', 'is_login', 'is_mine'],
         methods: {
@@ -34,6 +40,8 @@ $(function() {
                     }).catch(function (error) {
                         console.log(error);
                     });
+                } else if (!this.is_login) {
+                    this.open_login_for_marking_dialog();
                 }
             },
             getTotalPoint: function() {
@@ -54,6 +62,9 @@ $(function() {
             },
             setTotalPoint: function(totalPoint) {
                 this.total_point = totalPoint;
+            },
+            open_login_for_marking_dialog: function() {
+                this.login_for_marking_visible = true;
             }
         },
         data: function() {
@@ -64,6 +75,7 @@ $(function() {
                 star_img4: REVERT_STAR_IMG,
                 star_img5: REVERT_STAR_IMG,
                 total_point: 0,
+                login_for_marking_visible: false,
             }
         },
         created: function() {
@@ -92,7 +104,6 @@ $(function() {
             open_login_for_naming_dialog: function() {
                 this.login_for_naming_visible = true;
             }
-
         },
 
     });
