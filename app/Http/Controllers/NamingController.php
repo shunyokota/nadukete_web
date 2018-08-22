@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Theme;
 use App\Naming;
 use App\Star;
+use Illuminate\Support\Facades\DB;
 
 class NamingController extends Controller
 {
