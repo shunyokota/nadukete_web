@@ -5,7 +5,7 @@
             <div>
                 <div class="point-wrapper">
                     <span class="point">
-                        <img class="star" src="/images/star.svg"><span class="point-value">{{$naming->totalPoint()}}</span>
+                        <img class="star" src="/images/star.svg"><span class="point-value">{{$naming->total_point}}</span>
                     </span>
                 </div>
             </div>
