@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta charset="UTF-8">
     <meta http-equiv="content-language" content="ja">
+    @yield('meta')
     <title>なづけて</title>
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/element-ui/index.css') }}">
@@ -15,9 +16,13 @@
 </head>
 
 <body>
+@php
+/*
 @if(Session::has('message'))
 <div id="flash-message" style="display:none">{{ session('message') }}</div>
 @endif
+*/
+@endphp
 
 <header id="main-header">
     <div id="header-inner">
@@ -63,12 +68,14 @@
         </ul>
     </el-dialog>
 
+    @if (Session::has('message'))
     <el-dialog :visible.sync="flash_message_visible" custom-class="common-dialog" v-cloak="v-cloak">
         <div class="dialog-content">
-            <p>{{ session('message') !== null ? session('message') : '' }}</p>
+            <p>{{ session('message') }}</p>
             <button class="primary inverted" @click="flash_message_visible = false">OK</button>
         </div>
     </el-dialog>
+    @endif
 </header>
 
 <main>

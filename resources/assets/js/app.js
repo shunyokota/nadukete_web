@@ -6,7 +6,7 @@ window.onload = function() {
                 registry_visible: false,
                 registry_form: {},
                 registry_data: [],
-                flash_message_visible: false
+                flash_message_visible: true
             }
         },
 
