@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta charset="UTF-8">
     <meta http-equiv="content-language" content="ja">
-    <meta property="og:image"       content="http://foo.com/bar.jpg" />
+    @yield('meta')
     <title>なづけて</title>
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/element-ui/index.css') }}">

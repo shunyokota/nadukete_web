@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('meta')
+    <meta property="og:image" content="{{env('AWS_S3_URL')}}theme_{{$theme->id}}.jpg" />
+@endsection
+
 @section('content')
     <script src="/js/themes.js"></script>
     <div id="theme-content" class="content">

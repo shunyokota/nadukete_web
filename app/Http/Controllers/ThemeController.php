@@ -7,6 +7,7 @@ use Abraham\TwitterOAuth\TwitterOAuth;
 use App\Theme;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\URL;
 
 class ThemeController extends Controller
 {
@@ -37,6 +38,9 @@ class ThemeController extends Controller
                 $request->user()->twitter_token, // You get token from user, when him  sigin to your app by twitter api
                 $request->user()->twitter_token_secret// You get tokenSecret from user, when him  sigin to your app by twitter api
             );
+            $themeUrl = URL::to('/').'/theme/'.$theme->id;
+            $tweetContent = $request->content."\n".'この事象に名前をつけてください！'."\n".$themeUrl;
+            $statuses = $connection->post("statuses/update", ["status" => $tweetContent]);
             $request->session()->flash('message', 'お題を登録しました。');
 
             $disk = Storage::disk('s3');
