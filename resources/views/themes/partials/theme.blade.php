@@ -3,14 +3,16 @@
         <div class="theme-header">
             <span class="title">お題</span>
             @if ($theme->user)
-            <span class="user">
                 @if (Auth::user() && $theme->user_id == Auth::user()->id)
-                    <span class="my-theme">わたしのお題</span>
+                    <span class="user">
+                        <span class="my-theme">わたしのお題</span>
+                    </span>
                 @else
+                    <a class="user" href="https://twitter.com/{{$theme->user->nickname}}">
                     <img class="avatar" src="{{$theme->user->avatar}}" />
                     {{$theme->user->name}}
+                    </a>
                 @endif
-            </span>
             @endif
         </div>
 
