@@ -45,7 +45,7 @@ class ThemeController extends Controller
 
             $disk = Storage::disk('s3');
             $filePath = public_path().'/images/theme_frame.jpg';
-            $font = "/vagrant/font1.otf";
+            $font = "fonts/font.otf";
             $image = imagecreatefromjpeg($filePath);
             $color = imagecolorallocate($image, 0, 0, 0);
             $imageName = 'theme_'.$theme->id.'.jpg';
