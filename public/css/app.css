@@ -3116,6 +3116,28 @@ input[type=text] {
   border-radius: 5px;
 }
 
+ul.pagination {
+  padding-left: 0px;
+  text-align: center;
+}
+
+ul.pagination li {
+  font-size: 1.2rem;
+  list-style-type: none;
+  display: inline;
+  padding: 0.2rem;
+}
+
+ul.pagination li a {
+  color: #FFCA9E;
+}
+
+ul.pagination li.current span {
+  background: #FFCA9E;
+  color: white;
+  padding: 0.2rem;
+}
+
 header {
   border-top: 3px solid #FFAF6C;
   border-bottom: 5px solid #FFAF6C;

@@ -12,7 +12,8 @@ use Illuminate\Support\Facades\URL;
 class ThemeController extends Controller
 {
     public function index(Request $request){
-        $themes = Theme::orderBy('id', 'desc')->get();
+        //$themes = Theme::orderBy('id', 'desc')->get();
+        $themes = Theme::orderBy('id', 'desc')->paginate(10);
         return view('themes.index', compact('themes'));
     }
 

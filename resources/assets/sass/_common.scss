@@ -1,0 +1,23 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  background: $main-background-color;
+  color: $default-font-color;
+}
+
+a {
+  text-decoration: none;
+  color: $default-font-color;
+}
+
+textarea,input[type=text] {
+  border-style: none;
+}
+textarea {
+  border-radius: 10px;
+  resize: none;
+}
+input[type=text] {
+  border-radius: 5px;
+}

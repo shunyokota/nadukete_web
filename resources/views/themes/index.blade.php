@@ -6,6 +6,7 @@
         @foreach($themes as $theme)
             @include('themes.partials.theme', ['theme' => $theme, 'last' => $loop->last])
         @endforeach
+        {{ $themes->links() }}
         @include('namings.partials.naming_form_dialog')
     </div>
 @endsection
