@@ -3368,44 +3368,41 @@ main .content .answers .answer {
   padding-top: 1em;
 }
 
-main .content .answers .answer .naming-header {
-  position: relative;
-  height: 30px;
-}
-
-main .content .answers .answer .naming-header img.trophy {
-  position: absolute;
-  height: 25px;
-  left: 10px;
-}
-
-main .content .answers .answer .naming-header .best-answer {
-  position: absolute;
-  color: #74BFFF;
-  font-weight: bold;
-  left: 40px;
-}
-
-main .content .answers .answer .naming-header .answerer-wrapper {
-  position: absolute;
+main .content .answers .answer .naming-header .trophy-wrapper {
   display: table;
-  right: 10px;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 15px;
 }
 
-main .content .answers .answer .naming-header .answerer-wrapper .answerer {
-  display: table-row;
+main .content .answers .answer .naming-header .trophy-wrapper img.trophy {
+  height: 25px;
   vertical-align: middle;
-}
-
-main .content .answers .answer .naming-header .answerer-wrapper .answerer .avatar {
-  display: table-cell;
-  width: 25px;
-  border-radius: 20px;
   margin-right: 5px;
 }
 
-main .content .answers .answer .naming-header .answerer-wrapper .answerer .name {
-  display: table-cell;
+main .content .answers .answer .naming-header .trophy-wrapper .best-answer {
+  color: #74BFFF;
+  font-weight: bold;
+  vertical-align: middle;
+  font-size: 1.5em;
+}
+
+main .content .answers .answer .naming-header .answerer-wrapper {
+  display: table;
+  width: 100%;
+  text-align: right;
+  padding-bottom: 15px;
+}
+
+main .content .answers .answer .naming-header .answerer-wrapper .avatar {
+  width: 25px;
+  border-radius: 20px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+main .content .answers .answer .naming-header .answerer-wrapper .name {
   vertical-align: middle;
 }
 

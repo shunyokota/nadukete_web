@@ -223,36 +223,36 @@ main {
       .answer {
         padding-top: 1em;
         .naming-header {
-          position: relative;
-          height:30px;
-          img.trophy {
-            position: absolute;
-            height: 25px;
-            left: 10px;
-          }
-          .best-answer {
-            position: absolute;
-            color: #74BFFF;
-            font-weight: bold;
-            left: 40px;
+          .trophy-wrapper {
+            display: table;
+            width: 100%;
+            text-align:center;
+            padding-bottom: 15px;
+            img.trophy {
+              height: 25px;
+              vertical-align: middle;
+              margin-right: 5px;
+            }
+            .best-answer {
+              color: #74BFFF;
+              font-weight: bold;
+              vertical-align: middle;
+              font-size: 1.5em;
+            }
           }
           .answerer-wrapper {
-            position: absolute;
             display: table;
-            right: 10px;
-            .answerer {
-              display: table-row;
+            width: 100%;
+            text-align:right;
+            padding-bottom: 15px;
+            .avatar {
+              width: 25px;
+              border-radius: 20px;
+              margin-right: 5px;
               vertical-align: middle;
-              .avatar {
-                display:table-cell;
-                width: 25px;
-                border-radius: 20px;
-                margin-right: 5px;
-              }
-              .name {
-                display: table-cell;
-                vertical-align: middle;
-              }
+            }
+            .name {
+              vertical-align: middle;
             }
           }
         }

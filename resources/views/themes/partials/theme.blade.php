@@ -68,14 +68,14 @@
             <div class="answer">
                 <div class="naming-header">
                     @if ($loop->index == 0)
+                    <div class="trophy-wrapper">
                         <img class="trophy" src="/images/trophy.svg">
                         <span class="best-answer">Best Answer</span>
+                    </div>
                     @endif
                     <div class="answerer-wrapper">
-                        <div class="answerer">
-                            <img class="avatar" src="{{$naming->user->avatar}}" />
-                            <span class="name">{{$naming->user->nickname}}</span>
-                        </div>
+                        <img class="avatar" src="{{$naming->user->avatar}}" />
+                        <span class="name">{{$naming->user->nickname}}</span>
                     </div>
                 </div>
                 <h3 class="naming">{{$naming->name}}</h3>
