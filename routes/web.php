@@ -23,3 +23,10 @@ Route::get('mypage/namings', 'MypageController@namings');
 Route::get('auth/twitter', 'Auth\AuthController@redirectToProvider');
 Route::get('auth/twitter/callback', 'Auth\AuthController@handleProviderCallback');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+
+//静的ページ
+Route::get('/terms', 'StaticController@terms');
+Route::get('/privacy', 'StaticController@privacy');
+Route::get('/about', 'StaticController@about');
+

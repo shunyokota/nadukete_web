@@ -54,10 +54,10 @@
                 <a>なづけてとは？</a>
             </li>
             <li>
-                <a>プライバシーポリシー</a>
+                <a href="/privacy">プライバシーポリシー</a>
             </li>
             <li>
-                <a>利用規約</a>
+                <a href="/terms">利用規約</a>
             </li>
             @if (Auth::user())
             <li>
