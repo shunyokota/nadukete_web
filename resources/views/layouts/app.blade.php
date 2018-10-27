@@ -51,7 +51,7 @@
                 <a href="/">なづけて一覧</a>
             </li>
             <li>
-                <a>なづけてとは？</a>
+                <a href="/about">なづけてとは？</a>
             </li>
             <li>
                 <a href="/privacy">プライバシーポリシー</a>
