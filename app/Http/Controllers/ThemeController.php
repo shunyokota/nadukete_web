@@ -48,10 +48,16 @@ class ThemeController extends Controller
             $filePath = public_path().'/images/theme_frame.jpg';
             $font = "fonts/font.otf";
             $image = imagecreatefromjpeg($filePath);
+            $originalWidth = imagesx($image);
+            $contentWordWrap = mb_wordwrap($request->content, 25);
+            var_dump($contentWordWrap);
+            //exit;
+            $ttfBox = imagettfbbox(20, 0, $font, $contentWordWrap);
+            $x = ceil(($originalWidth - $ttfBox[2]) / 2);
             $color = imagecolorallocate($image, 0, 0, 0);
             $imageName = 'theme_'.$theme->id.'.jpg';
 
-            imagettftext($image, 10, 0, 30, 40, $color, $font, $request->content);
+            imagettftext($image, 20, 0, $x, 200, $color, $font, $contentWordWrap);
             imagejpeg($image, $imageName, 100);
 
             // S3 Buketにファイルをアップロード
@@ -60,5 +66,16 @@ class ThemeController extends Controller
             return redirect('/mypage/themes');
         }
     }
-    //
+}
+
+
+
+function mb_wordwrap( $str, $width=35, $break=PHP_EOL )
+{
+    $c = mb_strlen($str);
+    $arr = [];
+    for ($i=0; $i<=$c; $i+=$width) {
+        $arr[] = mb_substr($str, $i, $width);
+    }
+    return implode($break, $arr);
 }
