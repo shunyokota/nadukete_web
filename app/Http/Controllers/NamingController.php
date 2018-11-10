@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Theme;
 use App\Naming;
 use App\Star;
+use App\Libs\Twitter;
 use Illuminate\Support\Facades\DB;
 
 class NamingController extends Controller
@@ -21,6 +22,10 @@ class NamingController extends Controller
         $naming->user_id = $request->user()->id;
         $naming->theme_id = $theme_id;
         $naming->save();
+
+        $themeUrl = Theme::getThemeUrl($theme_id);
+        $tweetContent = 'この事象に新しく名前をつけてました！'."\n".$themeUrl."\n".$naming->name;
+        Twitter::post($tweetContent, $request->user());
 
         $request->session()->flash('message', '新しくなづけた名前を登録しました。');
 

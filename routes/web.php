@@ -22,7 +22,9 @@ Route::get('mypage/themes', 'MypageController@themes');
 Route::get('mypage/namings', 'MypageController@namings');
 Route::get('auth/twitter', 'Auth\AuthController@redirectToProvider');
 Route::get('auth/twitter/callback', 'Auth\AuthController@handleProviderCallback');
-Route::get('auth/logout', 'Auth\AuthController@getLogout');
+Route::get('theme/logout', 'Auth\AuthController@getLogout');
+
+Route::get('themes/{theme_id}/card.jpg', 'ThemeController@cardJpg');
 
 
 //静的ページ
