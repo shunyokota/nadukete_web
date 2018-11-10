@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    @include('layouts.header.analytics')
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta charset="UTF-8">
     <meta http-equiv="content-language" content="ja">
