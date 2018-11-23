@@ -5,10 +5,7 @@
     <meta name="twitter:site" content="@nadukete_dev" />
     <meta property="og:url" content="{{Request::fullUrl()}}" />
     <meta property="og:title" content="この事象になづけてください" />
-    {{--<meta property="og:description" content="記事の要約（ディスクリプション）" />--}}
-
-    {{--<meta property="og:image" content="{{env('AWS_S3_URL')}}theme_{{$theme->id}}.jpg" />--}}
-    <meta property="og:image" content="{{env('AWS_S3_URL')}}theme_{{$theme->id}}.jpg" />
+    <meta property="og:image" content="{{Request::root()}}/themes/{{$theme->id}}/card.jpg" />
 @endsection
 
 @section('content')
