@@ -11,7 +11,11 @@
     <link rel="stylesheet" href="{{ asset('/css/element-ui/index.css') }}">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/vue.js"></script>
+    @if (env('APP_ENV') == config('const.APP_ENV.production'))
+        <script type="text/javascript" src="/js/vue.min.js"></script>
+    @else
+        <script type="text/javascript" src="/js/vue.js"></script>
+    @endif
     <script type="text/javascript" src="/js/element-ui/index.js"></script>
     <script type="text/javascript" src="/js/app.js"></script>
 </head>
