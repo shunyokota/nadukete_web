@@ -8,5 +8,7 @@
 return [
 
     'TWITTER_APP' => ['id' => 'giQFZNVT5uLfNeIKjyDfSHUFR',
-        'secret' => 'wWlKbLYHevNde6MVvVJMJOrI9XafgSziduVkpPcTJbhqGSssFT']
+        'secret' => 'wWlKbLYHevNde6MVvVJMJOrI9XafgSziduVkpPcTJbhqGSssFT'],
+
+    'APP_ENV' => ['local' => 'local', 'staging' => 'staging', 'production' => 'production']
 ];
