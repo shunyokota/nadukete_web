@@ -20,6 +20,7 @@ class Twitter
             $user->twitter_token, // You get token from user, when him  sigin to your app by twitter api
             $user->twitter_token_secret// You get tokenSecret from user, when him  sigin to your app by twitter api
         );
+        $tweetContent = $tweetContent."\n".'#なづけて';
         return $connection->post("statuses/update", ["status" => $tweetContent]);
     }
 }
