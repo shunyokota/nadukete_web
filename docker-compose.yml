@@ -1,0 +1,29 @@
+version: '3'
+services:
+  web:
+    image: nginx:1.17
+    ports:
+      - "8000:80"
+    depends_on:
+      - app
+    volumes:
+      - ./docker/web/default.conf:/etc/nginx/conf.d/default.conf
+      - .:/web
+
+  app:
+    build: ./docker/php
+    depends_on:
+      - mysql
+    volumes:
+      - .:/web
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    #起動時にスキーマを作成するようしたかったのですが、上手くいかなかったので手動で実行してください。
+    #command: mysql -uroot -proot -e'CREATE SCHEMA IF NOT EXISTS evo_web_demo_development DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;'
+    ports:
+      - "3506:3306"
+    volumes:
+      - .mysql_data:/var/lib/mysql
