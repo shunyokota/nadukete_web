@@ -22,7 +22,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
     #起動時にスキーマを作成するようしたかったのですが、上手くいかなかったので手動で実行してください。
-    #command: mysql -uroot -proot -e'CREATE SCHEMA IF NOT EXISTS evo_web_demo_development DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;'
+    #command: mysql -uroot -proot -e'CREATE SCHEMA IF NOT EXISTS nadukete DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;'
     ports:
       - "3506:3306"
     volumes:
