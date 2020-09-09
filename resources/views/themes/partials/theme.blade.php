@@ -27,7 +27,7 @@
         @endif
 
         <div class="theme-footer">
-            <span class="answer-count">{{$theme->namings()->count()}}&nbsp;answers</span>
+            <span class="answer-count">{{$theme->namings()->count()}}個の名前がついています</span>
             <span class="date">{{$theme->created_at->format('Y/m/d')}}</span>
         </div>
     </div>
