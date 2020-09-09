@@ -9,7 +9,7 @@
                     </span>
                 @else
                     <a class="user" href="https://twitter.com/{{$theme->user->nickname}}">
-                    <img class="avatar" src="{{$theme->user->avatar}}" />
+                    <img class="avatar" src="{{preg_replace("/^http:/i", "https:",$theme->user->avatar)}}" />
                     {{$theme->user->name}}
                     </a>
                 @endif
