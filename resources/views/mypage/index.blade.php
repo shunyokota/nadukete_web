@@ -3,7 +3,7 @@
 @section('content')
     <div class="content">
         <div class="avatar-wrapper">
-            <img class="avatar" src="{{Auth::user()->avatar}}" />
+            <img class="avatar" src="{{Auth::user()->avatar_https}}" />
         </div>
 
         <div class="user-info-wrapper">

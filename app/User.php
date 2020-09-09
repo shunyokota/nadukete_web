@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Helpers\Helper;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -36,5 +37,13 @@ class User extends Authenticatable
     public function namings()
     {
         return $this->hasMany('App\Naming');
+    }
+
+    public function getAvatarHttpsAttribute()
+    {
+        if (empty($this->avatar)) {
+            return '';
+        }
+        Helper::httpToHttps($this->avatar);
     }
 }
